@@ -1,3 +1,3 @@
 public class TestPleger {
-    system.out.print("hello");
+    System.out.print("hello zäme");
 }
