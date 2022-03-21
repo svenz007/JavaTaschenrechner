@@ -1,5 +1,6 @@
 import javax.xml.transform.Result;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -26,7 +27,8 @@ public class Mainclass {
                 eingabe = false;
             }
         }
-
+        FileStream file = new FileStream();
+        file.readFile("c:\\%userprofile%\\Desktop\\test.txt");
 
     }
 }

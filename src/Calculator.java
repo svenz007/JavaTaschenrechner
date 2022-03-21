@@ -48,15 +48,18 @@ public class Calculator {
 
     public double getZahl1() {
 
-        try {
-            System.out.println("Geben Sie die erste Zahl ein:");
-            Scanner scan = new Scanner(System.in);
-            zahl1 = scan.nextDouble();
-            setZahl1(zahl1);
+            try {
+                System.out.println("Geben Sie die erste Zahl ein:");
+                Scanner scan = new Scanner(System.in);
+                zahl1 = scan.nextDouble();
+                setZahl1(zahl1);
 
-        }catch(Exception e) {
-            System.out.println("invalid syntax");
-        }return zahl1;
+
+            } catch (Exception e) {
+                System.out.println("invalid syntax");
+
+
+        } return zahl1;
     }
 
 
