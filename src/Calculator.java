@@ -5,7 +5,7 @@ public class Calculator {
     //Attribute
     private double zahl1;
     private double zahl2;
-
+    private double endResult;
 
     //Kunstruktor
     public Calculator() {
@@ -13,29 +13,32 @@ public class Calculator {
     }
 
     public double OperatorAuswahl(String operation) {
-        double endResult = 0;
+
         switch (operation) {
 
             case "1":
                 getZahl1();
                 getZahl2();
                 endResult =  summe(zahl1, zahl2);
-
+                setEndResult(endResult);
                 break;
             case "2":
                 getZahl1();
                 getZahl2();
                 endResult = minus(zahl1, zahl2);
+                setEndResult(endResult);
                 break;
             case "3":
                 getZahl1();
                 getZahl2();
                 endResult = multiplikation(zahl1, zahl2);
+                setEndResult(endResult);
                 break;
             case "4":
                 getZahl1();
                 getZahl2();
                 endResult = division(zahl1, zahl2);
+                setEndResult(endResult);
                 break;
 
             default:
@@ -90,9 +93,15 @@ public class Calculator {
     return result;
 }
 
+    public double getEndResult() {
+        return endResult;
+    }
 
+    public void setEndResult(double endResult) {
+        this.endResult = endResult;
+    }
 
-    public double minus(double zahl1,double zahl2)
+    public double minus(double zahl1, double zahl2)
     {
         double result;
         result = zahl1 - zahl2;
