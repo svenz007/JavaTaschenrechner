@@ -1,9 +1,16 @@
 import java.io.*;
 
-public class Benutzereingabe {
+public class Benutzereingabe  {
 
-private Calculator rechner;
-    public Benutzereingabe() {
+    private double zahl1;
+    private double zahl2;
+    private double ganzeRechnung;
+    private String ganzeRechnungString;
+
+    public Benutzereingabe(double zahl1, double zahl2, double ganzeRechnung) {
+        this.zahl1  = zahl1;
+        this.zahl2 = zahl2;
+        this.ganzeRechnung = ganzeRechnung;
     }
 
     public void Path(String path , double berechnung) {
@@ -28,25 +35,42 @@ private Calculator rechner;
 
             String result = String.valueOf("\n"+berechnung);
 
-            fileOutputStreamByteSequence(path, result);
+            fileOutputStreamByteSequence(path, ganzeRechnungString);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
-    public String funktprt(String text){
-        if(text.equals(1)){
 
-        }
-        return "p";
-    }
 
-    public static void fileOutputStreamByteSequence(String file, String data3) throws IOException {
-        byte[] bytes = data3.getBytes();
+
+    public static void fileOutputStreamByteSequence(String file, String ganzeRechnungString) throws IOException {
+        byte[] bytes = ganzeRechnungString.getBytes();
+
         try (OutputStream out = new FileOutputStream(file, true)) {
+
             out.write(bytes);
 
 
+
+
         }
+
+    }    public String funktprt(String text){
+        if(text.equals("1")){
+            ganzeRechnungString ="\n"+zahl1+" + "+zahl2 + " = " + ganzeRechnung;
+
+        }else if (text.equals("2")){
+            ganzeRechnungString ="\n"+ zahl1+" - "+zahl2 + " = " + ganzeRechnung;
+
+        }else if (text.equals("3")){
+            ganzeRechnungString ="\n"+zahl1+" * "+zahl2 + " = " + ganzeRechnung;
+
+        }else if (text.equals("4")){
+            ganzeRechnungString ="\n"+zahl1+" / "+zahl2 + " = " + ganzeRechnung;
+
+        }
+        return ganzeRechnungString;
     }
+
 }

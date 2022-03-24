@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Calculator {
@@ -11,32 +10,32 @@ public class Calculator {
     public Calculator() {
 
     }
-
+// Welche Mathematische Methode wurde ausgewählt
     public double OperatorAuswahl(String operation) {
 
         switch (operation) {
 
             case "1":
-                getZahl1();
-                getZahl2();
+                takeZahl1();
+                takeZahl2();
                 endResult =  summe(zahl1, zahl2);
                 setEndResult(endResult);
                 break;
             case "2":
-                getZahl1();
-                getZahl2();
+                takeZahl1();
+                takeZahl2();
                 endResult = minus(zahl1, zahl2);
                 setEndResult(endResult);
                 break;
             case "3":
-                getZahl1();
-                getZahl2();
+                takeZahl1();
+                takeZahl2();
                 endResult = multiplikation(zahl1, zahl2);
                 setEndResult(endResult);
                 break;
             case "4":
-                getZahl1();
-                getZahl2();
+                takeZahl1();
+                takeZahl2();
                 endResult = division(zahl1, zahl2);
                 setEndResult(endResult);
                 break;
@@ -49,13 +48,14 @@ public class Calculator {
 
     //Methoden
 
-    public double getZahl1() {
+    public double takeZahl1() {
 
             try {
                 System.out.println("Geben Sie die erste Zahl ein:");
                 Scanner scan = new Scanner(System.in);
                 zahl1 = scan.nextDouble();
                 setZahl1(zahl1);
+
 
 
             } catch (Exception e) {
@@ -70,7 +70,7 @@ public class Calculator {
         this.zahl1 = zahl1;
     }
 
-    public double getZahl2() {
+    public double takeZahl2() {
         try {
             System.out.println("Geben Sie die zweite Zahl ein:");
             Scanner scan = new Scanner(System.in);
@@ -83,6 +83,7 @@ public class Calculator {
     }
 
     public void setZahl2(double zahl2) {
+
         this.zahl2 = zahl2;
     }
 
@@ -120,5 +121,13 @@ public class Calculator {
         double result;
         result = zahl1 / zahl2;
         return result;
+    }
+
+    public double getZahl1() {
+        return zahl1;
+    }
+
+    public double getZahl2() {
+        return zahl2;
     }
 }

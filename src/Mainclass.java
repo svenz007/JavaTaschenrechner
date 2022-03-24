@@ -8,7 +8,7 @@ public class Mainclass {
 
         System.out.println("Projekt Taschenrechner Teko Teil 1");
         Calculator cal1 = new Calculator();
-        String text = "";
+        String text = null;
         double resultat = 0;
         boolean eingabe = true;
         while (eingabe) {
@@ -26,8 +26,9 @@ public class Mainclass {
 
         String userprofile = System.getenv("USERPROFILE");
         String Path = userprofile + "\\Desktop\\TekoTeil1.txt";
-        Benutzereingabe filestream = new Benutzereingabe();
+        Benutzereingabe filestream = new Benutzereingabe(cal1.getZahl1(), cal1.getZahl2(), cal1.getEndResult());
         filestream.funktprt(text);
+
         filestream.Path(Path, resultat);
     }
 
