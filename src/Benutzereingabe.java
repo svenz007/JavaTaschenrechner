@@ -46,17 +46,15 @@ public class Benutzereingabe  {
 
     public static void fileOutputStreamByteSequence(String file, String ganzeRechnungString) throws IOException {
         byte[] bytes = ganzeRechnungString.getBytes();
-
         try (OutputStream out = new FileOutputStream(file, true)) {
-
             out.write(bytes);
-
-
 
 
         }
 
-    }    public String funktprt(String text){
+    }
+
+    public String funktprt(String text){
         if(text.equals("1")){
             ganzeRechnungString ="\n"+zahl1+" + "+zahl2 + " = " + ganzeRechnung;
 

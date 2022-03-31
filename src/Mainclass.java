@@ -16,7 +16,7 @@ public class Mainclass {
             Scanner scan = new Scanner(System.in);
             text = scan.next();
 
-            if (text.matches("^[1-4]|,]*$")) {
+            if (text.matches("[1-4]")) {
 
                 resultat = cal1.OperatorAuswahl(text);
                 System.out.println(resultat);

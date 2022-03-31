@@ -6,10 +6,7 @@ public class Calculator {
     private double zahl2;
     private double endResult;
 
-    //Kunstruktor
-    public Calculator() {
 
-    }
 // Welche Mathematische Methode wurde ausgewählt
     public double OperatorAuswahl(String operation) {
 
@@ -54,12 +51,15 @@ public class Calculator {
                 System.out.println("Geben Sie die erste Zahl ein:");
                 Scanner scan = new Scanner(System.in);
                 zahl1 = scan.nextDouble();
+
                 setZahl1(zahl1);
 
 
 
             } catch (Exception e) {
                 System.out.println("invalid syntax");
+                takeZahl1();
+
 
 
         } return zahl1;
@@ -79,6 +79,7 @@ public class Calculator {
 
         }catch(Exception e) {
             System.out.println("invalid syntax");
+            takeZahl2();
         }return zahl2;
     }
 
